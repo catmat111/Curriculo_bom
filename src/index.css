@@ -1,4 +1,12 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
+html, body {
+  /* Evita scroll horizontal indesejado em ecrãs pequenos */
+  overflow-x: hidden;
+  width: 100%;
+}
 
 body {
   margin: 0;

@@ -29,7 +29,7 @@
 
 .contacto-info {
   flex: 1;
-  min-width: 300px;
+  min-width: min(300px, 100%);
 }
 
 .contacto-tag {
@@ -72,7 +72,7 @@
 
 .contacto-form {
   flex: 1;
-  min-width: 300px;
+  min-width: min(300px, 100%);
   background: rgba(0,0,0,0.2);
   padding: 2rem;
   border-radius: 8px;
@@ -134,4 +134,22 @@
 
 .form-status-error {
   color: var(--hot-pink);
+}
+
+@media (max-width: 600px) {
+  .contato-section {
+    padding: 2rem 1.25rem;
+  }
+
+  .contacto-container {
+    gap: 2rem;
+  }
+
+  .contacto-title {
+    font-size: 1.8rem;
+  }
+
+  .contacto-form {
+    padding: 1.5rem;
+  }
 }

@@ -15,8 +15,22 @@
 
 .stack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
   gap: 2rem;
+}
+
+@media (max-width: 600px) {
+  .stack-section {
+    padding: 2rem 1.25rem;
+  }
+
+  .stack-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .stack-grid {
+    gap: 1.25rem;
+  }
 }
 
 .stack-category {

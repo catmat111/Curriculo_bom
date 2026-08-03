@@ -5,9 +5,16 @@
   padding: 0 2rem; /* Retiramos o padding do topo porque a navbar agora é fixa */
 }
 
+@media (max-width: 600px) {
+  .app-container {
+    padding: 0 1.25rem;
+  }
+}
+
 /* SECÇÕES UNIFORMES: cada uma ocupa no mínimo um ecrã inteiro */
 main > section {
   min-height: 100vh;
+  min-height: 100dvh; /* Melhor em mobile: ignora a barra de endereço a aparecer/desaparecer */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -147,6 +154,8 @@ main > section.is-visible {
   padding: 8px 16px;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
   gap: 10px;
   font-family: var(--font-cyber);
   font-size: 0.8rem;
@@ -168,4 +177,104 @@ main > section.is-visible {
   0% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.7); }
   70% { box-shadow: 0 0 0 6px rgba(57, 255, 20, 0); }
   100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
+}
+
+/* Botão hambúrguer — só aparece em mobile/tablet (ver media query abaixo) */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-main);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* TABLET E MOBILE: menu vira um painel dropdown por baixo da navbar */
+@media (max-width: 860px) {
+  .navbar {
+    padding: 1rem 5%;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background: rgba(18, 8, 31, 0.97);
+    backdrop-filter: blur(12px);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+  }
+
+  .navbar-links.open {
+    max-height: 400px;
+    opacity: 1;
+    padding: 0.5rem 0 1.5rem;
+  }
+
+  .navbar-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-links a {
+    display: block;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+
+  .navbar-actions {
+    flex: 0 0 auto;
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-pill-text {
+    display: none;
+  }
+
+  .btn-pill {
+    padding: 8px 10px;
+  }
+
+  .navbar-logo {
+    font-size: 1rem;
+  }
 }

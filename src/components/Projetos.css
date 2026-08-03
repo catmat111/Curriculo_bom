@@ -8,9 +8,19 @@
 
 .projetos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 2rem;
   margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .projetos-section {
+    padding: 2rem 1.25rem;
+  }
+
+  .projetos-grid {
+    gap: 1.25rem;
+  }
 }
 
 .projeto-card {

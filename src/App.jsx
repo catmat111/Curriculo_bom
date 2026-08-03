@@ -13,6 +13,7 @@ function App() {
   const [isExiting, setIsExiting] = useState(false);
   const [lang, setLang] = useState('pt');
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     // Controla o tempo da animação inicial de terminal
@@ -85,12 +86,12 @@ function App() {
       <nav className="navbar">
         <div className="navbar-logo">CATARINA_MATOS.exe</div>
         
-        <ul className="navbar-links">
-          <li><a href="#sobre">{lang === 'pt' ? 'Sobre' : 'About'}</a></li>
-          <li><a href="#projetos">{lang === 'pt' ? 'Projetos' : 'Projects'}</a></li>
-          <li><a href="#percurso">{lang === 'pt' ? 'Percurso' : 'Journey'}</a></li>
-          <li><a href="#stack">Stack</a></li>
-          <li><a href="#contacto">{lang === 'pt' ? 'Contacto' : 'Contact'}</a></li>
+        <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
+          <li><a href="#sobre" onClick={() => setMenuOpen(false)}>{lang === 'pt' ? 'Sobre' : 'About'}</a></li>
+          <li><a href="#projetos" onClick={() => setMenuOpen(false)}>{lang === 'pt' ? 'Projetos' : 'Projects'}</a></li>
+          <li><a href="#percurso" onClick={() => setMenuOpen(false)}>{lang === 'pt' ? 'Percurso' : 'Journey'}</a></li>
+          <li><a href="#stack" onClick={() => setMenuOpen(false)}>Stack</a></li>
+          <li><a href="#contacto" onClick={() => setMenuOpen(false)}>{lang === 'pt' ? 'Contacto' : 'Contact'}</a></li>
         </ul>
 
         <div className="navbar-actions">
@@ -98,8 +99,18 @@ function App() {
             {lang === 'pt' ? 'EN' : 'PT'}
           </button>
           <div className="btn-pill">
-            <span className="status-dot"></span> OPEN TO WORK
+            <span className="status-dot"></span><span className="btn-pill-text">OPEN TO WORK</span>
           </div>
+          <button
+            className={`navbar-toggle ${menuOpen ? 'open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? (lang === 'pt' ? 'Fechar menu' : 'Close menu') : (lang === 'pt' ? 'Abrir menu' : 'Open menu')}
+            aria-expanded={menuOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
 
         <div className="scroll-progress" style={{ width: `${scrollProgress}%` }}></div>

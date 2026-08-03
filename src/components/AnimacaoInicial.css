@@ -68,6 +68,7 @@
   font-family: var(--font-cyber);
   color: var(--neon-green);
   font-size: 1.2rem;
+  max-width: 100%;
 }
 
 /* A animação de escrever (usando clip-path para não falhar) */
@@ -75,8 +76,10 @@
   margin: 6px 0;
   white-space: nowrap;
   width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
   opacity: 0;
-  clip-path: inset(0 100% 0 0); 
+  clip-path: inset(0 100% 0 0);
 }
 
 /* Tempos de cada linha */
@@ -117,4 +120,14 @@
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+@media (max-width: 600px) {
+  .mac-body {
+    padding: 16px;
+  }
+
+  .terminal-container {
+    font-size: 0.72rem;
+  }
 }
