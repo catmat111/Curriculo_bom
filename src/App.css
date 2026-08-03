@@ -1,0 +1,171 @@
+/* Container principal */
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem; /* Retiramos o padding do topo porque a navbar agora é fixa */
+}
+
+/* SECÇÕES UNIFORMES: cada uma ocupa no mínimo um ecrã inteiro */
+main > section {
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-margin-top: 120px; /* Compensa a navbar fixa ao saltar pelos links */
+
+  /* Estado inicial: a secção entra a deslizar de baixo e a ganhar opacidade */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* O App.jsx adiciona esta classe via IntersectionObserver quando a secção entra no ecrã */
+main > section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main > section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Cursor de terminal a piscar depois dos títulos em estilo comentário de código */
+.section-tag::after {
+  content: '_';
+  margin-left: 2px;
+  animation: blink-cursor 1s steps(1) infinite;
+}
+
+@keyframes blink-cursor {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-tag::after {
+    animation: none;
+  }
+}
+
+/* NAVBAR FIXA E MODERNA */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(18, 8, 31, 0.85); /* Roxo muito escuro com transparência */
+  backdrop-filter: blur(12px); /* Efeito de vidro esfumaçado */
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  box-sizing: border-box;
+}
+
+/* A linha animada de scroll no fundo da navbar */
+.scroll-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green);
+  transition: width 0.1s ease-out;
+}
+
+.navbar-logo {
+  color: var(--hot-pink);
+  font-weight: bold;
+  font-family: var(--font-cyber);
+  font-size: 1.2rem;
+  flex: 1; /* Empurra os links para o centro */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  justify-content: center; /* Centraliza os links */
+}
+
+.navbar-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: var(--font-cyber);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--neon-green);
+}
+
+/* ÁREA DOS BOTÕES (DIREITA) */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  justify-content: flex-end; /* Empurra os botões para a direita */
+}
+
+/* Botão Redondo (Idioma e Tema) */
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: var(--text-main);
+  font-family: var(--font-cyber);
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.btn-circle:hover {
+  border-color: var(--text-main);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Botão em formato de pílula (Open to Work) */
+.btn-pill {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-cyber);
+  font-size: 0.8rem;
+  color: var(--text-main);
+  cursor: default;
+}
+
+/* A bolinha verde a piscar */
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--neon-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--neon-green);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(57, 255, 20, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
+}
