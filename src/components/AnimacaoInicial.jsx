@@ -3,16 +3,16 @@ import './AnimacaoInicial.css';
 function AnimacaoInicial({ isExiting, lang }) {
   const text = {
     pt: {
-      line1: "inicializando sistema...",
-      line2: "carregando módulos: curriculo [ok] personalidade [ok]",
-      line3: "injetando matriz de cores (verde, rosa, roxo)",
+      line1: "inicializar sistema...",
+      line2: "a carregar módulos: curriculo [ok] personalidade [ok]",
+      line3: "injetando matriz de cores",
       line4: "costurando código...",
       line5: "acesso concedido."
     },
     en: {
       line1: "initializing system...",
       line2: "loading modules: resume [ok] personality [ok]",
-      line3: "injecting color matrix (green, pink, purple)",
+      line3: "injecting color matrix",
       line4: "stitching code...",
       line5: "access granted."
     }

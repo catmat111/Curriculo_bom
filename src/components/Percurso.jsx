@@ -19,8 +19,8 @@ function Percurso({ lang }) {
       title: lang === 'pt' ? 'Pós-Graduação em SAP (ERP)' : 'Postgraduate in SAP (ERP)',
       place: 'Instituto Politécnico de Tomar',
       desc: lang === 'pt' 
-        ? 'Especialização em Sistemas de Gestão Empresarial, focada na criação e análise de dashboards de suporte à decisão.' 
-        : 'Specialization in Enterprise Management Systems, focused on creating and analyzing decision-support dashboards.',
+        ? 'Especialização em Sistemas de Gestão Empresarial, com implementações em SAP.' 
+        : 'Specialization in Enterprise Management Systems, with implementations in SAP.',
       type: 'edu'
     },
     {

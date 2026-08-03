@@ -7,8 +7,8 @@ function Hero({ lang }) {
     pt: {
       greeting: "Olá, eu sou a Catarina",
       role2: "Desenvolvedora Full-Stack",
-      description: "Apaixonada pelo desenvolvimento de software, com especial foco em tecnologias web. Gosto de criar interfaces dinâmicas e reativas em React e desenvolver arquiteturas robustas de backend.",
-      description2: "Uma curiosidade que nasceu a mexer em circuitos e microcontroladores, hoje aplicada ao desenvolvimento full-stack — gosto de perceber como as coisas funcionam por dentro, do hardware ao browser. Tenho sempre um projeto pessoal a cozinhar em segundo plano e adoro trabalho de equipa em ambiente ágil.",
+      description: "Apaixonada pelo desenvolvimento de software, com especial foco em tecnologias web. Gosto de criar interfaces dinâmicas em React e desenvolver arquiteturas robustas de backend.",
+      description2: "Uma curiosidade que nasceu a mexer em circuitos e microcontroladores, hoje aplicada ao desenvolvimento full-stack — gosto de perceber como as coisas funcionam por dentro, do hardware ao browser. Tenho sempre um projeto pessoal a cozinhar em segundo plano e adoro trabalho de equipa em ambiente scrum.",
       button: ">_ ABRIR CURRÍCULO",
       terminalPrompt: "visitante@site:~$",
       terminalTitle: "catarina@portfolio: ~",
@@ -25,7 +25,7 @@ function Hero({ lang }) {
           output: [
             "Licenciatura em Engenharia Informática — IPT (2026)",
             "Pós-Graduação em SAP (ERP) — IPT",
-            "a aprender Rust nas horas vagas, porque sim"
+            
           ]
         },
         {
@@ -34,13 +34,13 @@ function Hero({ lang }) {
         },
         {
           cmd: "sudo rm procrastinação",
-          output: ["rm: não foi possível remover 'procrastinação': dispositivo ou recurso ocupado (café a caminho)"]
+          output: ["rm: não foi possível remover 'procrastinação': impossível de ir para o caminho porque não foi encontrado"]
         }
       ],
       // NOTA: números divertidos/estimados — ajusta à vontade
       stats: [
-        { value: '4+', label: 'anos de formação' },
-        { value: '4', label: 'projetos lançados' },
+        { value: '3', label: 'anos de formação' },
+        { value: '5', label: 'projetos lançados' },
         { value: '9999+', label: 'bugs esmagados' },
         { value: '∞', label: 'cafés ingeridos' }
       ]
@@ -66,7 +66,7 @@ function Hero({ lang }) {
           output: [
             "Bachelor's in Computer Engineering — IPT (2026)",
             "Postgraduate in SAP (ERP) — IPT",
-            "learning Rust in my spare time, just because"
+            
           ]
         },
         {
@@ -75,13 +75,13 @@ function Hero({ lang }) {
         },
         {
           cmd: "sudo rm procrastination",
-          output: ["rm: cannot remove 'procrastination': device or resource busy (coffee incoming)"]
+          output: ["rm: cannot remove 'procrastination': Cannot find path because it does not exist."]
         }
       ],
       // NOTE: fun/estimated numbers — tweak freely
       stats: [
-        { value: '4+', label: 'years of study' },
-        { value: '4', label: 'projects shipped' },
+        { value: '3', label: 'years of study' },
+        { value: '5', label: 'projects shipped' },
         { value: '9999+', label: 'bugs squashed' },
         { value: '∞', label: 'coffees consumed' }
       ]

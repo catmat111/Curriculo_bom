@@ -8,7 +8,7 @@ function Projetos({ lang }) {
   const projects = [
     {
       title: 'FormDocs',
-      desc_pt: 'Aplicação web completa em ambiente ágil (Scrum). Criação de interfaces responsivas e trabalho em equipa de 6 pessoas.',
+      desc_pt: 'Aplicação web completa em ambiente Scrum. Criação de interfaces responsivas e trabalho em equipa de 6 pessoas.',
       desc_en: 'Full-stack web application in an agile environment (Scrum). Creation of responsive interfaces and collaboration in a team of 6.',
       tech: ['React', 'TypeScript', 'Git']
     },

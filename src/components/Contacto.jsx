@@ -9,8 +9,8 @@ function Contacto({ lang }) {
   const content = {
     pt: {
       tag: "/* Contacto */",
-      title: "VAMOS TRABALHAR JUNTOS?",
-      text: "Tens um projeto em mente ou queres bater um papo sobre tecnologia e desenvolvimento? Manda uma mensagem, respondo o mais breve possível.",
+      title: "Quer trabalhar comigo?",
+      text: "Tem um projeto em mente ou quer falar sobre tecnologia e desenvolvimento? Manda uma mensagem, respondo o mais breve possível.",
       name: "Seu nome",
       email: "seu@email.com",
       subject: "Assunto",
@@ -18,7 +18,7 @@ function Contacto({ lang }) {
       btn: "ENVIAR MENSAGEM",
       sending: "A ENVIAR...",
       success: "Mensagem enviada! Respondo em breve.",
-      error: "Não foi possível enviar. Tenta outra vez ou usa o email diretamente."
+      error: "Não foi possível enviar. Tenta outra vez ou use o email diretamente."
     },
     en: {
       tag: "/* Contact */",
